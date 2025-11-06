@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "users": {
+      "$userId": {
+        ".read": "$userId === auth.uid",
+        ".write": "$userId === auth.uid",
+        "taskLists": {
+          ".read": "$userId === auth.uid",
+          ".write": "$userId === auth.uid",
+          "$taskListId": {
+            ".read": "$userId === auth.uid",
+            ".write": "$userId === auth.uid",
+            "tasks": {
+              ".read": "$userId === auth.uid",
+              ".write": "$userId === auth.uid",
+              "$taskId": {
+                ".read": "$userId === auth.uid",
+                ".write": "$userId === auth.uid"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
